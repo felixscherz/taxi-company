@@ -11,6 +11,7 @@ BASE_URL = "https://d37ci6vzurychx.cloudfront.net"
 
 PATH_TEMPLATE = "/trip-data/yellow_tripdata_{year:04d}-{month:02d}.parquet"
 
+
 class DataLoader:
     def __init__(self, path: str):
         self.client = httpx.AsyncClient(base_url=BASE_URL)
