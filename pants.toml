@@ -11,4 +11,4 @@ marker_filenames = ["pyproject.toml"]
 [python]
 interpreter_constraints = ['==3.11.*']
 enable_resolves = true
-resolves = { python-default = "thirdparty/python/default.lock" }
+resolves = { python-default = "3rdparty/python/default.lock" }

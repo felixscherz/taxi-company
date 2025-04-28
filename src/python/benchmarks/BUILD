@@ -4,7 +4,7 @@ pex_binary(
     name="bin",
     dependencies=[
         ":lib",
-        "//thirdparty/python:reqs#pandas",
+        "//3rdparty/python:reqs#pandas",
     ],
     entry_point="benchmarks.duckdb",
 )
