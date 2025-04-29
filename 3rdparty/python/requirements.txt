@@ -1,3 +1,6 @@
 pandas
 httpx
 duckdb
+pytest
+pytest-httpx
+pytest-recording
