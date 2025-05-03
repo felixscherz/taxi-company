@@ -4,3 +4,5 @@ duckdb
 pytest
 pytest-httpx
 pytest-recording
+vcrpy
+pyarrow
