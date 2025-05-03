@@ -1,1 +1,1 @@
-file(name="casette", source="test_imports.yaml")
+file(name="cassette", source="test_imports.yaml")
