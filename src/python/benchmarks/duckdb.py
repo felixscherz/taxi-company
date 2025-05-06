@@ -68,5 +68,12 @@ def main():
         ).to_df()
     )
 
+    # rides per month
+    print(
+        db.sql(
+            "SELECT DATE_TRUNC('month', tpep_pickup_datetime) AS ride_month, COUNT(*) as cnt FROM df GROUP BY ride_month ORDER BY cnt DESC LIMIT 10"
+        ).to_df()
+    )
+
 if __name__ == "__main__":
     main()
