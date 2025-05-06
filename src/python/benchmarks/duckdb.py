@@ -58,7 +58,11 @@ def main():
 
     # pickup durations
 
-    print()
+    print(
+        db.sql(
+            "SELECT tpep_pickup_datetime, tpep_dropoff_datetime, EXTRACT(EPOCH FROM (tpep_dropoff_datetime - tpep_pickup_datetime)) as trip_duration_seconds FROM df ORDER BY trip_duration_seconds DESC LIMIT 10"
+        ).to_df()
+    )
 
 
 if __name__ == "__main__":
