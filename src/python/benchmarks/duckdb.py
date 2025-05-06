@@ -61,5 +61,12 @@ def main():
     )
 
 
+    # rides per day
+    print(
+        db.sql(
+            "SELECT CAST(tpep_pickup_datetime AS DATE) AS ride_date, COUNT(*) as cnt FROM df GROUP BY ride_date ORDER BY cnt DESC LIMIT 10"
+        ).to_df()
+    )
+
 if __name__ == "__main__":
     main()
