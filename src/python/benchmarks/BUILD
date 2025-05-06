@@ -14,6 +14,7 @@ pex_binary(
     dependencies=[
         ":lib",
         "//3rdparty/python:reqs#pandas",
+        "//3rdparty/python:reqs#pyarrow",
     ],
     entry_point="benchmarks.pandas",
 )
