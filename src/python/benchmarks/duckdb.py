@@ -1,18 +1,14 @@
 from duckdb import connect
-from ingestions import DataLoader
-import asyncio
-
-
-# download data first
+import argparse
 
 
 def main():
-    loader = DataLoader("./data")
-    asyncio.run(loader.download(2024, 12))
-
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input-dir", type=str, required=True, help="Path to parquet data directory")
+    args = parser.parse_args()
     db = connect()
 
-    db.read_parquet("data/*.parquet").create("df")
+    db.read_parquet(f"{args.input_dir}/*.parquet").create("df")
 
     # print(db.sql("DESCRIBE df"))
 
