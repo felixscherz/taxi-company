@@ -18,3 +18,12 @@ pex_binary(
     ],
     entry_point="benchmarks.pandas",
 )
+
+pex_binary(
+    name="polars_bin",
+    dependencies=[
+        ":lib",
+        "//3rdparty/python:reqs#polars",
+    ],
+    entry_point="benchmarks.polars",
+)
